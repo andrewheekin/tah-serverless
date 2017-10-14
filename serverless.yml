@@ -66,4 +66,16 @@ functions:
           path: notes
           method: get
           cors: true
-          authorizer: aws_iam                   
+          authorizer: aws_iam
+
+  # Defines an HTTP API endpoint that calls the main function in update.js
+  # - path: url path is /notes/{id}
+  # - method: PUT request
+  update:
+    handler: update.main
+    events:
+      - http:
+          path: notes/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam               
