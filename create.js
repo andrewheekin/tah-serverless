@@ -10,6 +10,7 @@ export async function main(event, context, callback) {
       userId: event.requestContext.identity.cognitoIdentityId,
       noteId: uuid.v1(),
       content: data.content,
+      tag: data.tag,
       attachment: data.attachment,
       createdAt: new Date().getTime(),
     },
